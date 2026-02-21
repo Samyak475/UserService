@@ -18,7 +18,10 @@ public class UserService {
 
     public UserInfoDto saveEventIntoDb(UserInfoDto userInfoDto){
         Function<UserInfo,UserInfo> updateUser =(user)->{
-            return userRepository.save(userInfoDto.fetchUserInfo());
+            return userRepository.save(userInfoDto.fetchUserInfo()); // this is wrong
+            // when we get user from db it has an uniquee id so we need to save (User) not pass userfrom userInfoDto
+            // as both have different reference
+
         };
         Supplier<UserInfo> saveUser = ()->{
             return userRepository.save(userInfoDto.fetchUserInfo());

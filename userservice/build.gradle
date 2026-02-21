@@ -52,9 +52,13 @@ dependencies {
 	testAnnotationProcessor "org.projectlombok:lombok:$lombokVersion"
 	testImplementation "org.projectlombok:lombok:$lombokVersion"
 
+// ADD THIS: This provides @SpringBootTest and other testing tools
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	// RECOMMENDED: Helps Gradle run JUnit 5 tests more reliably
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 	// JUnit 5 for testing
-	testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.3'
-	testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.3'
+//	testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.3'
+//	testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.3'
 
 
 }
